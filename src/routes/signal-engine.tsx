@@ -154,7 +154,7 @@ function SignalEnginePage() {
             {signals.data!.map((s) => (
               <Tr key={s.id}>
                 <Td className="font-medium">{s.company ?? "—"}</Td>
-                <Td className="text-xs text-text-muted mono">{s.domain ?? "—"}</Td>
+                <Td className="text-xs text-text-muted mono">{s.company_domain ?? "—"}</Td>
                 <Td><SignalTypeBadge type={s.signal_type} /></Td>
                 <Td className="max-w-xs truncate text-xs text-text-muted">
                   {s.evidence ?? "—"}

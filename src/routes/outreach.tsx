@@ -34,7 +34,7 @@ function OutreachPage() {
       rows.reduce((s, c) => s + (c.open_rate ?? 0), 0) / rows.length;
     const reply =
       rows.reduce((s, c) => s + (c.reply_rate ?? 0), 0) / rows.length;
-    const positive = rows.reduce((s, c) => s + (c.positive_replies ?? 0), 0);
+    const positive = rows.reduce((s, c) => s + (c.positive_reply_count ?? 0), 0);
     return { sent, open, reply, positive };
   }, [campaigns.data]);
 

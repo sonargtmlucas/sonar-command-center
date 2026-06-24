@@ -282,7 +282,7 @@ function OverviewPage() {
                 {activeLead.company ?? "—"}
               </div>
               <div className="text-sm text-text-muted">
-                {activeLead.domain ?? ""}
+                {activeLead.company_domain ?? ""}
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">

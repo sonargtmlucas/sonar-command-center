@@ -67,7 +67,7 @@ export function usePipeline() {
       const { data, error } = await sonar
         .from(SONAR_TABLES.pipeline)
         .select("*")
-        .order("last_activity_at", { ascending: false, nullsFirst: false });
+        .order("last_activity", { ascending: false, nullsFirst: false });
       if (error) throw error;
       return (data ?? []) as PipelineAccount[];
     },

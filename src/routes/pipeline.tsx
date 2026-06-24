@@ -88,7 +88,7 @@ function PipelinePage() {
 
     const { error } = await sonar
       .from(SONAR_TABLES.pipeline)
-      .update({ stage, last_activity_at: new Date().toISOString() })
+      .update({ stage, last_activity: new Date().toISOString() })
       .eq("id", id);
     if (error) {
       toast.error("Move failed");
@@ -256,8 +256,8 @@ function DealCard({
           {deal.deal_value ? `$${deal.deal_value.toLocaleString()}` : "—"}
         </span>
         <span className="text-[10px] mono text-text-muted">
-          {deal.last_activity_at
-            ? formatDistanceToNow(new Date(deal.last_activity_at), { addSuffix: true })
+          {deal.last_activity
+            ? formatDistanceToNow(new Date(deal.last_activity), { addSuffix: true })
             : "no activity"}
         </span>
       </div>
@@ -281,7 +281,7 @@ function DealDetail({ deal }: { deal: PipelineAccount }) {
         <Tile label="ICP Score" value={String(deal.icp_score ?? "—")} />
         <Tile
           label="Last Activity"
-          value={deal.last_activity_at ? formatDistanceToNow(new Date(deal.last_activity_at), { addSuffix: true }) : "—"}
+          value={deal.last_activity ? formatDistanceToNow(new Date(deal.last_activity), { addSuffix: true }) : "—"}
         />
       </div>
       <div>
